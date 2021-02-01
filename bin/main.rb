@@ -1,5 +1,12 @@
 #!/usr/bin/env ruby
+
 # class Tictactoe
+
+#enter your name
+def players_name
+ name = puts "Enter your name: "
+ name = gets.chomp
+end
 
 def display_board(board)
   while board.include?(' ')
@@ -19,6 +26,23 @@ def display_board(board)
       puts 'Sorry, thats an invalid option, Try again'
     end
   end
+end
+
+
+#players_turn
+def players_turn
+  puts "now is your turn"
+end
+#WIN_COMBINATION = []
+
+#win_move
+def win_move
+  puts "congratulations! you won the game"
+end
+
+#tie
+def tie
+  puts "this is a tie, try again"
 end
 
 board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
