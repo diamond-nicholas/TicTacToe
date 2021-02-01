@@ -2,10 +2,9 @@
 
 # class Tictactoe
 
-#enter your name
+# enter your name
 def players_name
- name = puts "Enter your name: "
- name = gets.chomp
+  puts 'Enter your name: '
 end
 
 def display_board(board)
@@ -28,21 +27,20 @@ def display_board(board)
   end
 end
 
-
-#players_turn
+# players_turn
 def players_turn
-  puts "now is your turn"
+  puts 'now is your turn'
 end
-#WIN_COMBINATION = []
+# WIN_COMBINATION = []
 
-#win_move
+# win_move
 def win_move
-  puts "congratulations! you won the game"
+  puts 'congratulations! you won the game'
 end
 
-#tie
+# tie
 def tie
-  puts "this is a tie, try again"
+  puts 'this is a tie, try again'
 end
 
 board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
