@@ -1,5 +1,5 @@
 # TicTacToe
-input some text
+This project is centered on teaching about executables and shell.
 
 # Getting Started
 
@@ -7,11 +7,11 @@ To get your own copy of our project simply clone the repository to your local ma
 
 Step 1: Type the following command into a git shell
 
-git clone
+git clone https://github.com/diamond-nicholas/TicTacToe.git
 
 Step 2: Direct a terminal into the cloned repository directory
 
-cd bubble_sort
+cd tictactoe then git checkout to milestone1
 
 Step 3: Run the program from command line, then open it in a text editor
 
@@ -50,6 +50,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 The Odin Project
+codecademy
 lanch Schools
 
 
