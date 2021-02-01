@@ -7,7 +7,7 @@ To get your own copy of our project simply clone the repository to your local ma
 
 Step 1: Type the following command into a git shell
 
-git clone 
+git clone
 
 Step 2: Direct a terminal into the cloned repository directory
 
@@ -29,14 +29,15 @@ Step 3: Run the program from command line, then open it in a text editor
 
 ## AUTHORS
 👤 **Diamond Nicholas**
-- GitHub:[@Diamond-Nicholas] (https://github.com/diamond-nicholas) 
+- GitHub:[@Diamond-Nicholas] (https://github.com/diamond-nicholas)
 - Twitter: [@twitterhandle](https://twitter.com/diamondnich)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/diamond-nicholas/)
 
-<!-- 👤 **Manuel Aldaraca**
-- GitHub:[@vicmaburrito] (https://github.com/vicmaburrito) 
-- Twitter: [@twitterhandle](https://twitter.com/ManuelAldaraca)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/manuel-aldaraca) -->
+
+👤 **Mar y Sol Bautista**
+- GitHub: [@marilirulita](https://github.com/marilirulita)
+- Linkedin: [Mar y Sol Bautista](https://www.linkedin.com/in/mar-y-sol-bautista-alvarez-5a6894151/)
+- Twiter: [@marylirulita](https://twitter.com/marylirulita)
 
 
 ## SHOW YOUR SUPPORT
