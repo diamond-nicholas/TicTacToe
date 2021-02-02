@@ -110,6 +110,15 @@ def won?(board)
   end
 end
 
+# full method
+def full?(board)
+  unless board.include?(" ")
+    return true
+  else
+    return false
+  end
+end
+
 
 
 # def players_name
