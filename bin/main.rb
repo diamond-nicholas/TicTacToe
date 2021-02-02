@@ -35,6 +35,15 @@ def move(board, index, players_letter)
   board[index] = players_letter
 end
 
+#position_taken?
+def position_taken?(board, index)
+  if board[index] == " "
+    return false
+  else
+    return true
+  end
+end
+
 def players_name
   puts 'Enter your name: '
 end
