@@ -24,7 +24,7 @@ def display_board(board)
       puts 'Nice, now is my turn'
       if @win_movement == true
         win_move
-      move = false
+        move = false
       end
     else
       puts 'Sorry, thats an invalid option, Try again'
