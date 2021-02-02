@@ -25,6 +25,11 @@ WIN_COMBINATION = [
   [2,4,6] #DIAGONAL RIGHT
 ]
 
+#input_to_index
+def input_to_index(user_input)
+  user_input.to_i - 1
+end
+
 def players_name
   puts 'Enter your name: '
 end
