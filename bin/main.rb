@@ -90,9 +90,25 @@ def turn
   end
 end
 
-
 puts turn
 
+# work later
+display_board(board)
+#won method
+def won?(board)
+  count = 0
+  WIN_COMBINATION.each do |elem|
+    elem.each do |a| #0
+      if board[a] == "x"
+        count += 1
+      end
+    end
+
+    if count >= 3
+      return elem
+    end
+  end
+end
 
 
 
