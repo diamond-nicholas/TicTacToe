@@ -8,7 +8,8 @@ def players_name
 end
 
 def display_board(board)
-  while board.include?(' ')
+  move = true
+  while move == true
     puts "#{board[0]} | #{board[1]} | #{board[2]}"
     puts '----------'
     puts "#{board[3]} | #{board[4]} | #{board[5]}"
@@ -21,6 +22,14 @@ def display_board(board)
 
     if range_arr.include?(selected)
       puts 'Nice, now is my turn'
+      if @win_movement == true
+        if @win == true
+          puts 'Congratulations! you won the game'
+        else
+          puts 'This is a draw game'
+        end
+      move = false
+      end
     else
       puts 'Sorry, thats an invalid option, Try again'
     end
@@ -33,18 +42,21 @@ def players_turn
 end
 # WIN_COMBINATION = []
 
-# win_move
+# win_move or draw_move
 def win_move
-  puts 'congratulations! you won the game'
+  @win_movement = false
+  @win = false
+  if @win == true
+    puts 'Congratulations! you won the game'
+  else
+    puts 'This is a draw game'
+  end
 end
 
-# tie
-def tie
-  puts 'this is a tie, try again'
-end
 
 board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
 display_board(board)
+
 
 # end
