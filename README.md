@@ -1,5 +1,5 @@
 # TicTacToe
-In this project involves building a mock Tic Tac Toe game. The main goal is to put into practice the main concepts of Object Oriented Programming, getting users input and printing the result to the screen.
+This project involves building a mock Tic Tac Toe game. The main goal is to put into practice the main concepts of Object Oriented Programming, getting users input and printing the result to the screen.
 
 # Getting Started
 

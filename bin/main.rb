@@ -27,7 +27,7 @@ def display_board(board)
     end
     move += 1
   end
-    puts 'Congratulations! you won the game'
+  puts 'Congratulations! you won the game'
 end
 
 # players_turn
@@ -38,7 +38,6 @@ end
 
 # win_move or draw_move
 def win_move
-  
   @win_movement = false
   @win = false
   if @win == true
