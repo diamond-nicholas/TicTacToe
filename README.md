@@ -1,5 +1,5 @@
 # TicTacToe
-This project is centered on teaching about executables and shell.
+In this project involves building a mock Tic Tac Toe game. The main goal is to put into practice the main concepts of Object Oriented Programming, getting users input and printing the result to the screen.
 
 # Getting Started
 
@@ -11,7 +11,7 @@ git clone https://github.com/diamond-nicholas/TicTacToe.git
 
 Step 2: Direct a terminal into the cloned repository directory
 
-cd tictactoe then git checkout to milestone1
+cd tictactoe then git checkout to user_interface
 
 Step 3: Run the program from command line, then open it in a text editor
 
