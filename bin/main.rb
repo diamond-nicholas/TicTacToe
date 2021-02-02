@@ -53,6 +53,17 @@ def valid_move?(board, index)
   end
 end
 
+# turn count counts the number of turns that have been played
+def turn_count(board)
+  counter = 0
+  board.each do |element|
+    if element == "x" || element == "o"
+      counter += 1
+    end
+  end
+  counter
+end
+
 def players_name
   puts 'Enter your name: '
 end
