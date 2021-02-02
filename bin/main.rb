@@ -44,6 +44,15 @@ def position_taken?(board, index)
   end
 end
 
+#valid_move?
+def valid_move?(board, index)
+  if board[index] == " " &&  (0...9).to_a.include?(index)
+    return true
+  else
+    return false
+  end
+end
+
 def players_name
   puts 'Enter your name: '
 end
