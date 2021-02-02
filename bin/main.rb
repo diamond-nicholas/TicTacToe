@@ -64,6 +64,15 @@ def turn_count(board)
   counter
 end
 
+#current player
+def current_player(turn_count)
+  if turn_count % 2 == 0
+    return "x"
+  else
+    return "o"
+  end
+end
+
 def players_name
   puts 'Enter your name: '
 end
