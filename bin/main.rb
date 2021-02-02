@@ -23,11 +23,7 @@ def display_board(board)
     if range_arr.include?(selected)
       puts 'Nice, now is my turn'
       if @win_movement == true
-        if @win == true
-          puts 'Congratulations! you won the game'
-        else
-          puts 'This is a draw game'
-        end
+        win_move
       move = false
       end
     else
@@ -53,10 +49,8 @@ def win_move
   end
 end
 
-
 board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
 display_board(board)
-
 
 # end
