@@ -30,6 +30,11 @@ def input_to_index(user_input)
   user_input.to_i - 1
 end
 
+#players move
+def move(board, index, players_letter)
+  board[index] = players_letter
+end
+
 def players_name
   puts 'Enter your name: '
 end
