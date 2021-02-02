@@ -13,6 +13,18 @@ end
 
 board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 
+#WIN_COMBINATION
+WIN_COMBINATION = [
+  [0,1,2], #TOP
+  [3,4,5], #MIDDLE
+  [6,7,8], #BOTTOM
+  [0,3,6], #LEFT
+  [1,4,7], #MIDDLE
+  [2,5,8], #RIGHT
+  [0,4,8], #DIAGONAL LEFT
+  [2,4,6] #DIAGONAL RIGHT
+]
+
 def players_name
   puts 'Enter your name: '
 end
