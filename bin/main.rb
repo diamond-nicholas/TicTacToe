@@ -95,21 +95,20 @@ end
 # display_board(board)
 
 #won method
+#won method
 def won?(board)
   WIN_COMBINATION.each do |elem|
     count = 0
     elem.each do |a| #0
       if board[a] == "x"
         count += 1
-        p count
       end
     end
     if count >= 3
       return elem
-    else
-      return false
     end
   end
+  return false
 end
 
 # full method
@@ -123,9 +122,9 @@ end
 
 #draw method
 def draw?(board)
-  if full?(board) && won?(board) == false
+  if full?(board) && !won?(board)
     return true
-  elsif full?(board) == false && won?(board) == false
+  elsif !full?(board) && !won?(board)
     return false
   elsif won?(board)
     return false
@@ -135,9 +134,6 @@ board = ["x", "o", "x", "o", "x", "o", "o", "x", "o"]
 #over
 def over?(board)
   if won?(board) || draw?(board) || full?(board)
-    # p won?(board) 
-    p draw?(board)
-    # p full?(board)
     return true
   else
     return false
