@@ -20,7 +20,7 @@ WIN_COMBINATION = [
   [2, 5, 8], # RIGHT
   [0, 4, 8], # DIAGONAL LEFT
   [2, 4, 6] # DIAGONAL RIGHT
-]
+].freeze
 
 board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
@@ -59,7 +59,6 @@ end
 
 # current player
 def current_player(board)
-
   if turn_count(board).even?
     'X'
   else
