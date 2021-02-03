@@ -91,11 +91,11 @@ def turn(board, letter)
 end
 
 # won method
-def won?(board, xo)
+def won?(board, letter)
   WIN_COMBINATION.each do |elem|
     count = 0
     elem.each do |a|
-      if board[a] == xo
+      if board[a] == letter
         count += 1
       end
     end
@@ -116,19 +116,19 @@ def full?(board)
 end
 
 # draw method
-def draw?(board, xo)
-  if full?(board) && !won?(board, xo)
+def draw?(board, letter)
+  if full?(board) && !won?(board, letter)
     true
-  elsif !full?(board) && !won?(board, xo)
+  elsif !full?(board) && !won?(board, letter)
     false
-  elsif won?(board, xo)
+  elsif won?(board, letter)
     false
   end
 end
 
 # over
-def over?(board, xo)
-  if won?(board, xo) || draw?(board, xo) || full?(board)
+def over?(board, letter)
+  if won?(board, letter) || draw?(board, letter) || full?(board)
     true
   else
     false
@@ -136,7 +136,7 @@ def over?(board, xo)
 end
 
 # winner method
-def winner?(board, xo)
+def winner?(board, letter)
   if won?(board, 'X')
     'X'
   elsif won?(board, 'O')
