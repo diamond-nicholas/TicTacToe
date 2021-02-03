@@ -94,18 +94,21 @@ puts turn
 
 # work later
 display_board(board)
+
 #won method
 def won?(board)
-  count = 0
   WIN_COMBINATION.each do |elem|
+    count = 0
     elem.each do |a| #0
       if board[a] == "x"
         count += 1
+        p count
       end
     end
-
     if count >= 3
       return elem
+    else
+      return false
     end
   end
 end
