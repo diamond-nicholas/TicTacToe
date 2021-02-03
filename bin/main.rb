@@ -11,7 +11,7 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
-board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+# board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 
 #WIN_COMBINATION
 WIN_COMBINATION = [
@@ -90,10 +90,9 @@ def turn
   end
 end
 
-puts turn
 
 # work later
-display_board(board)
+# display_board(board)
 
 #won method
 def won?(board)
@@ -124,16 +123,28 @@ end
 
 #draw method
 def draw?(board)
-  if full?(board) && !won?(board)
+  if full?(board) && won?(board) == false
     return true
-  elsif !full?(board) && !won?(board)
+  elsif full?(board) == false && won?(board) == false
     return false
   elsif won?(board)
     return false
   end
 end
-
-
+board = ["x", "o", "x", "o", "x", "o", "o", "x", "o"]
+#over
+def over?(board)
+  if won?(board) || draw?(board) || full?(board)
+    # p won?(board) 
+    p draw?(board)
+    # p full?(board)
+    return true
+  else
+    return false
+  end
+end
+p display_board(board)
+p over?(board)
 
 # def players_name
 #   puts 'Enter your name: '
