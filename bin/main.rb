@@ -36,7 +36,7 @@ end
 
 # position_taken?
 def position_taken?(board, index)
-  if board[index] == " "
+  if board[index] == ' '
     return false
   else
     return true
@@ -45,10 +45,10 @@ end
 
 # valid_move?
 def valid_move?(board, index)
-  if board[index] == " " &&  (0...9).to_a.include?(index)
-    return true
+  if board[index] == ' ' && (0...9).to_a.include?(index)
+    true
   else
-    return false
+    false
   end
 end
 
@@ -56,7 +56,7 @@ end
 def turn_count(board)
   counter = 0
   board.each do |element|
-    if element == "X" || element == "O"
+    if element == 'X' || element == 'O'
       counter += 1
     end
   end
@@ -66,9 +66,9 @@ end
 # current player
 def current_player(board)
   if turn_count(board) % 2 == 0
-    return "X"
+    'X'
   else
-    return "O"
+    'O'
   end
 end
 
@@ -99,49 +99,49 @@ def won?(board, xo)
       end
     end
     if count >= 3
-      return elem
+      elem
     end
   end
-  return false
+  false
 end
 
 # full method
 def full?(board)
-  unless board.include?(" ")
-    return true
+  unless board.include?(' ')
+    true
   else
-    return false
+    false
   end
 end
 
 # draw method
 def draw?(board, xo)
   if full?(board) && !won?(board, xo)
-    return true
+    true
   elsif !full?(board) && !won?(board, xo)
-    return false
+    false
   elsif won?(board, xo)
-    return false
+    false
   end
 end
 
 #over
 def over?(board, xo)
   if won?(board, xo) || draw?(board, xo) || full?(board)
-    return true
+    true
   else
-    return false
+    false
   end
 end
 
 # winner method
 def winner?(board, xo)
-  if won?(board, "X")
-    return "X"
-  elsif won?(board, "O")
-    return "O"
+  if won?(board, 'X')
+    'X'
+  elsif won?(board, 'O')
+    'O'
   else
-    return "Game Over"
+    'Game Over'
   end
 end
 
@@ -152,7 +152,7 @@ def play(board)
   end
   if won?(board, current_player(board))
     puts "Congratulations #{current_player(board)} player won!"
-  elsif draw?(board, "X") || draw?(board, "O")
+  elsif draw?(board, 'X') || draw?(board, 'O')
     puts "This is a draw game!"
   end
 end
