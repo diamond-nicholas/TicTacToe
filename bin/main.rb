@@ -22,7 +22,7 @@ WIN_COMBINATION = [
   [2, 4, 6] # DIAGONAL RIGHT
 ]
 
-board = [' ', 'X', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
 # input_to_index
 def input_to_index(user_input)
@@ -57,10 +57,10 @@ def turn_count(board)
   counter
 end
 
-
 # current player
 def current_player(board)
-  if turn_count(board) % 2 == 0
+
+  if turn_count(board).even?
     'X'
   else
     'O'
@@ -71,7 +71,7 @@ def turn(board, letter)
   loop_on = true
   while loop_on
     puts "Now is player #{letter} turn"
-    input = puts "Enter a position from 1-9: "
+    input = puts 'Enter a position from 1-9: '
     input = gets.chomp
     i = input_to_index(input)
     if valid_move?(board, i) == true
@@ -89,20 +89,16 @@ def won?(board, letter)
   WIN_COMBINATION.each do |elem|
     count = 0
     elem.each do |a|
-      if board[a] == letter
-        count += 1
-      end
+      count += 1 if board[a] == letter
     end
-    if count >= 3
-      return elem
-    end
+    return elem if count >= 3
   end
   false
 end
 
 # full method
 def full?(board)
-  unless board.include?(' ')
+  if !board.include?(' ')
     true
   else
     false
@@ -131,10 +127,8 @@ end
 
 # winner method
 def winner?(board, letter)
-  if won?(board, 'X')
-    'X'
-  elsif won?(board, 'O')
-    'O'
+  if won?(board, letter)
+    letter
   else
     'Game Over'
   end
@@ -142,9 +136,7 @@ end
 
 # play method
 def play(board)
-  until over?(board, current_player(board))
-    turn(board, current_player(board))
-  end
+  turn(board, current_player(board)) until over?(board, current_player(board))
   if won?(board, current_player(board))
     puts "Congratulations #{current_player(board)} player won!"
   elsif draw?(board, 'X') || draw?(board, 'O')
