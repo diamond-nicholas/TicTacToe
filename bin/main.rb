@@ -125,7 +125,7 @@ def draw?(board, xo)
   end
 end
 
-# over
+#over
 def over?(board, xo)
   if won?(board, xo) || draw?(board, xo) || full?(board)
     return true
