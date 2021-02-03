@@ -90,11 +90,6 @@ def turn
   end
 end
 
-
-# work later
-# display_board(board)
-
-#won method
 #won method
 def won?(board)
   WIN_COMBINATION.each do |elem|
@@ -139,6 +134,18 @@ def over?(board)
     return false
   end
 end
+
+#winner method
+def winner?(board)
+  if won?(board, "x")
+    return "X"
+  elsif won?(board, "o")
+    return "O"
+  else
+    return "Game Over"
+  end
+end
+
 p display_board(board)
 p over?(board)
 
