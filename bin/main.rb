@@ -22,7 +22,7 @@ WIN_COMBINATION = [
   [2, 4, 6] # DIAGONAL RIGHT
 ]
 
-board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+board = [' ', 'X', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
 # input_to_index
 def input_to_index(user_input)
@@ -36,11 +36,7 @@ end
 
 # position_taken?
 def position_taken?(board, index)
-  if board[index] == ' '
-    false
-  else
-    true
-  end
+  !(board[index] == ' ')
 end
 
 # valid_move?
