@@ -74,19 +74,19 @@ def current_player(turn_count)
 end
 
 #turn
-def turn
-  input = puts "Enter a position from 1-9: "
-  input = gets.chomp
-  i = input_to_index(input)
-  board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-  counter = turn_count(board)
-  current_turn = current_player(counter)
-
-  if valid_move?(board, i) == true
-    move(board, i, current_turn)
-    display_board(board)
-  else
-    puts 'Sorry, thats an invalid move, enter another number'
+def turn(board)
+  loop_on = true
+  while loop_on
+    input = puts "Enter a position from 1-9: "
+    input = gets.chomp
+    i = input_to_index(input) #0
+    if valid_move?(board, i) == true
+      move(board, i, "x")
+      display_board(board)
+      loop_on = false
+    else
+      puts 'Sorry, thats an invalid move, enter another number'
+    end
   end
 end
 
