@@ -37,15 +37,15 @@ end
 # position_taken?
 def position_taken?(board, index)
   if board[index] == ' '
-    return false
+    false
   else
-    return true
+    true
   end
 end
 
 # valid_move?
 def valid_move?(board, index)
-  if board[index] == ' ' && (0...9).to_a.include?(index)
+  if !position_taken?(board, index) && (0...9).to_a.include?(index)
     true
   else
     false
@@ -63,6 +63,7 @@ def turn_count(board)
   counter
 end
 
+
 # current player
 def current_player(board)
   if turn_count(board) % 2 == 0
@@ -72,13 +73,13 @@ def current_player(board)
   end
 end
 
-def turn(board, ox)
+def turn(board, letter)
   loop_on = true
   while loop_on
-    puts "Now is player #{ox} turn"
+    puts "Now is player #{letter} turn"
     input = puts "Enter a position from 1-9: "
     input = gets.chomp
-    i = input_to_index(input) #0
+    i = input_to_index(input)
     if valid_move?(board, i) == true
       move(board, i, current_player(board))
       display_board(board)
@@ -93,13 +94,13 @@ end
 def won?(board, xo)
   WIN_COMBINATION.each do |elem|
     count = 0
-    elem.each do |a| #0
+    elem.each do |a|
       if board[a] == xo
         count += 1
       end
     end
     if count >= 3
-      elem
+      return elem
     end
   end
   false
@@ -125,7 +126,7 @@ def draw?(board, xo)
   end
 end
 
-#over
+# over
 def over?(board, xo)
   if won?(board, xo) || draw?(board, xo) || full?(board)
     true
@@ -153,7 +154,7 @@ def play(board)
   if won?(board, current_player(board))
     puts "Congratulations #{current_player(board)} player won!"
   elsif draw?(board, 'X') || draw?(board, 'O')
-    puts "This is a draw game!"
+    puts 'This is a draw game!'
   end
 end
 
