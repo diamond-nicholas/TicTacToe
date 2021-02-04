@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-# class Tictactoe
-
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
   puts '-----------'
@@ -10,36 +8,31 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
-# WIN_COMBINATION
 WIN_COMBINATION = [
-  [0, 1, 2], # TOP
-  [3, 4, 5], # MIDDLE
-  [6, 7, 8], # BOTTOM
-  [0, 3, 6], # LEFT
-  [1, 4, 7], # MIDDLE
-  [2, 5, 8], # RIGHT
-  [0, 4, 8], # DIAGONAL LEFT
-  [2, 4, 6] # DIAGONAL RIGHT
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6]
 ].freeze
 
 board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
-# input_to_index
 def input_to_index(user_input)
   user_input.to_i - 1
 end
 
-# players move
 def move(board, index, players_letter)
   board[index] = players_letter
 end
 
-# position_taken?
 def position_taken?(board, index)
   board[index] != ' '
 end
 
-# valid_move?
 def valid_move?(board, index)
   if !position_taken?(board, index) && (0...9).to_a.include?(index)
     true
@@ -48,7 +41,6 @@ def valid_move?(board, index)
   end
 end
 
-# turn count counts the number of turns that have been played
 def turn_count(board)
   counter = 0
   board.each do |element|
@@ -57,7 +49,6 @@ def turn_count(board)
   counter
 end
 
-# current player
 def current_player(board)
   if turn_count(board).even?
     'X'
@@ -83,7 +74,6 @@ def turn(board, letter)
   end
 end
 
-# won method
 def won?(board, letter)
   WIN_COMBINATION.each do |elem|
     count = 0
@@ -95,7 +85,6 @@ def won?(board, letter)
   false
 end
 
-# full method
 def full?(board)
   if !board.include?(' ')
     true
@@ -104,7 +93,6 @@ def full?(board)
   end
 end
 
-# draw method
 def draw?(board, letter)
   if full?(board) && !won?(board, letter)
     true
@@ -115,7 +103,6 @@ def draw?(board, letter)
   end
 end
 
-# over
 def over?(board, letter)
   if won?(board, letter) || draw?(board, letter) || full?(board)
     true
@@ -124,7 +111,6 @@ def over?(board, letter)
   end
 end
 
-# winner method
 def winner?(board, letter)
   if won?(board, letter)
     letter
@@ -133,7 +119,6 @@ def winner?(board, letter)
   end
 end
 
-# play method
 def play(board)
   turn(board, current_player(board)) until over?(board, current_player(board))
   if won?(board, current_player(board))
