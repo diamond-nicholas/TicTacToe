@@ -91,7 +91,7 @@ class Game
     end
   end
 
-  def draw?(board, letter)
+  def draw?(board, *letter)
     if full?(board) && !won?(board, letter)
       true
     elsif !full?(board) && !won?(board, letter)
@@ -101,7 +101,7 @@ class Game
     end
   end
 
-  def over?(board, letter_sym)
+  def over?(board, *letter)
     letter_sym = atual_player(board)
     if won?(board, letter_sym) || draw?(board, letter_sym) || full?(board)
       true
