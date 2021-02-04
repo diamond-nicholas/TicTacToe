@@ -63,11 +63,20 @@ class Game
     end
   end
 
+  def atual_player(board)
+    if turn_count(board).odd?
+      'X'
+    else
+      'O'
+    end
+  end
+
   def won?(board, letter)
+    letter_sym = atual_player(board)
     WIN_COMBINATION.each do |elem|
       count = 0
       elem.each do |a|
-        count += 1 if board[a] == letter
+        count += 1 if board[a] == letter_sym
       end
       return elem if count >= 3
     end
@@ -93,7 +102,8 @@ class Game
   end
 
   def over?(board, letter)
-    if won?(board, letter) || draw?(board, letter) || full?(board)
+    letter_sym = atual_player(board)
+    if won?(board, letter_sym) || draw?(board, letter_sym) || full?(board)
       true
     else
       false

@@ -30,7 +30,7 @@ until play_board.over?(play_board.board, play_board.current_player(play_board.bo
 end
 
 if play_board.won?(play_board.board, play_board.current_player(play_board.board))
-  puts "Congratulations #{play_board.current_player(play_board.board)} player won!"
+  puts "Congratulations #{play_board.atual_player(play_board.board)} player won!"
 elsif play_board.draw?(play_board.board, 'X') || play_board.draw?(play_board.board, 'O')
   puts 'This is a draw game!'
 end
