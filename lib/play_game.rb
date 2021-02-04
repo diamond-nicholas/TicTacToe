@@ -1,14 +1,14 @@
 class Player
   attr_reader :letter
+
   def initialize(letter)
     @letter = letter
   end
 end
 
 class Game
+  attr_accessor :turn
   attr_reader :board
-  attr_reader :turn
-  attr_writer :turn
 
   def initialize(letter)
     @letter = letter
@@ -107,5 +107,4 @@ class Game
       'Game Over'
     end
   end
-
 end
