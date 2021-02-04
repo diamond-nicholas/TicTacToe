@@ -71,7 +71,7 @@ class Game
     end
   end
 
-  def won?(board, letter)
+  def won?(board, letter_sym)
     letter_sym = atual_player(board)
     WIN_COMBINATION.each do |elem|
       count = 0
@@ -101,7 +101,7 @@ class Game
     end
   end
 
-  def over?(board, letter)
+  def over?(board, letter_sym)
     letter_sym = atual_player(board)
     if won?(board, letter_sym) || draw?(board, letter_sym) || full?(board)
       true
