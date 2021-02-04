@@ -1,54 +1,36 @@
 #!/usr/bin/env ruby
 
-# class Tictactoe
-
-# enter your name
-def players_name
-  puts 'Enter your name: '
-end
+require './lib/play_game'
 
 def display_board(board)
-  move = 0
-  while move < 4
-    puts "#{board[0]} | #{board[1]} | #{board[2]}"
-    puts '----------'
-    puts "#{board[3]} | #{board[4]} | #{board[5]}"
-    puts '----------'
-    puts "#{board[6]} | #{board[7]} | #{board[8]}"
-    puts 'now is player 1 turn'
-    puts 'Select a number between 1 to 9, for choose an space'
-    selected = gets.chomp.to_i - 1
-    range_arr = (0...9).to_a
+  puts " #{board[0]} | #{board[1]} | #{board[2]} "
+  puts '-----------'
+  puts " #{board[3]} | #{board[4]} | #{board[5]} "
+  puts '-----------'
+  puts " #{board[6]} | #{board[7]} | #{board[8]} "
+end
 
-    if range_arr.include?(selected)
-      puts 'Now is player 2 turn'
+play_board = Game.new('X')
+
+until play_board.over?(play_board.board, play_board.current_player(play_board.board))
+  loop_on = true
+  while loop_on
+    puts "Now is player #{play_board.current_player(play_board.board)} turn"
+    input = puts 'Enter a position from 1-9: '
+    input = gets.chomp
+    i = play_board.input_to_index(input)
+    if play_board.valid_move?(play_board.board, i) == true
+      play_board.move(play_board.board, i, play_board.current_player(play_board.board))
+      display_board(play_board.board)
+      loop_on = false
     else
-      puts 'Sorry, thats an invalid move, Try again'
+      puts 'Sorry, thats an invalid move, enter another number'
     end
-    move += 1
-  end
-  puts 'Congratulations! you won the game'
-end
-
-# players_turn
-def players_turn
-  puts 'now is player 1 turn'
-end
-# WIN_COMBINATION = []
-
-# win_move or draw_move
-def win_move
-  @win_movement = false
-  @win = false
-  if @win == true
-    puts 'Congratulations! you won the game'
-  else
-    puts 'This is a draw game'
   end
 end
 
-board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-
-display_board(board)
-
-# end
+if play_board.won?(play_board.board, play_board.current_player(play_board.board))
+  puts "Congratulations #{play_board.atual_player(play_board.board)} player won!"
+elsif play_board.draw?(play_board.board, 'X') || play_board.draw?(play_board.board, 'O')
+  puts 'This is a draw game!'
+end
