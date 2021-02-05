@@ -53,13 +53,10 @@ Step 1: Type the following command into a git shell
 
 git clone https://github.com/diamond-nicholas/TicTacToe.git
 
-Step 2: Direct a terminal into the cloned repository directory
-
-cd tictactoe then git checkout to readme_game_instructions
+Step 2: Direct a terminal into the cloned repository directory cd tictactoe
 
 Step 3: Run the program from command line, then open it in a text editor
 
-- Go into the "TicTacToe" directory
 - Execute the "main.rb" file typing:
 
    ruby ./bin/main.rb
