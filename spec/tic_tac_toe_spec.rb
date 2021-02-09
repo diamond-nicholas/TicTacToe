@@ -11,9 +11,18 @@ describe Game do
   end
 
   describe '#move' do
-    it 'inserts user_input on the board' do
+    it 'returns the user token' do
       expect(game.move([' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 1, 'X')).to eql("X")
     end
   end
+
+  describe 'position_taken?' do
+    it 'checks if the postion on the board has a token' do
+      expect(game.position_taken?([' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 1)).to eql(false)
+
+    end
+  end
+
+
 
 end
