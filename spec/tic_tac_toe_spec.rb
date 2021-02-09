@@ -12,7 +12,7 @@ describe Game do
 
   describe '#move' do
     it 'inserts user_input on the board' do
-      expect(game.move([' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 4, 'X')).to eql("X")
+      expect(game.move([' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 1, 'X')).to eql("X")
     end
   end
 
