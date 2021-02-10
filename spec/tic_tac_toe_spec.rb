@@ -51,7 +51,11 @@ describe Game do
     end
   end
 
-  #skip won? method testing
+  describe 'won?' do
+    it 'checks the win_combination and return the elements if it is greater or equal to three' do
+      expect(game.won?(['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'], 'XO')).to eql([0, 4, 8])
+    end
+  end
 
 
   describe 'full?' do
