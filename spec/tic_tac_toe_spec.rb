@@ -53,10 +53,16 @@ describe Game do
 
   #skip won? method testing
 
-  
+
   describe 'full?' do
     it 'returns true if board does not include an empty space' do
       expect(game.full?(['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'])).to eql(true)
+    end
+  end
+
+  describe 'draw?' do
+    it 'returns true if board is full and game not won' do
+      expect(game.draw?(['X', 'O', 'O', 'O', 'X', 'X', 'X', 'O', 'O'], 'XO')).to eql(true)
     end
   end
 
