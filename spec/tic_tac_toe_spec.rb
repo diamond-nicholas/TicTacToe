@@ -66,11 +66,25 @@ describe Game do
     end
 
     it 'returns false if board is not full and game is not won' do
-       expect(game.draw?(['X', ' ', 'O', 'O', 'X', 'X', ' ', 'O', 'O'], 'XO')).to eql(false)
+      expect(game.draw?(['X', ' ', 'O', 'O', 'X', 'X', ' ', 'O', 'O'], 'XO')).to eql(false)
     end
 
     it 'returns false if the game is won' do
-       expect(game.draw?(['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'], 'XO')).to eql(false)
+      expect(game.draw?(['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'], 'XO')).to eql(false)
+    end
+  end
+
+  describe 'over?' do
+    it 'returns true if the game is won' do
+      expect(game.over?(['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'], 'XO')).to eql(true)
+    end
+
+    it 'returns true if the game is a draw' do
+      expect(game.over?(['X', 'O', 'O', 'O', 'X', 'X', 'X', 'O', 'O'], 'XO')).to eql(true)
+    end
+
+    it 'returns true if the board is full' do
+      expect(game.draw?(['X', 'O', 'O', 'O', 'X', 'X', 'X', 'O', 'O'], 'XO')).to eql(true)
     end
   end
 
