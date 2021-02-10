@@ -39,5 +39,11 @@ describe Game do
     end
   end
 
+  describe 'current_player' do
+    it 'returns X if the turn_count is even' do
+      expect(game.current_player(['X', ' ', 'O', ' ', ' ', ' ', ' ', ' ', ' '])).to eql('X')
+    end
+  end
+
 
 end
