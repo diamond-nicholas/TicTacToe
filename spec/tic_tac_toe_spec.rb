@@ -64,6 +64,14 @@ describe Game do
     it 'returns true if board is full and game not won' do
       expect(game.draw?(['X', 'O', 'O', 'O', 'X', 'X', 'X', 'O', 'O'], 'XO')).to eql(true)
     end
+
+    it 'returns false if board is not full and game is not won' do
+       expect(game.draw?(['X', ' ', 'O', 'O', 'X', 'X', ' ', 'O', 'O'], 'XO')).to eql(false)
+    end
+
+    it 'returns false if the game is won' do
+       expect(game.draw?(['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'], 'XO')).to eql(false)
+    end
   end
 
 end
