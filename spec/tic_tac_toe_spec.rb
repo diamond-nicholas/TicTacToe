@@ -88,4 +88,10 @@ describe Game do
     end
   end
 
+  describe 'winner?' do
+    it 'returns the winning letter if game is won' do
+      expect(game.winner?(['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'], 'X')).to eql('X')
+    end
+  end
+
 end
