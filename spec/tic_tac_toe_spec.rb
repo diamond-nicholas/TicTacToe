@@ -2,7 +2,6 @@ require_relative '../lib/play_game'
 
 game = Game.new('X')
 
-
 describe Game do
   describe '#input_to_index' do
     it 'converts the user_input to an interger and minus one' do
@@ -12,14 +11,13 @@ describe Game do
 
   describe '#move' do
     it 'returns the user token' do
-      expect(game.move([' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 1, 'X')).to eql("X")
+      expect(game.move([' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 1, 'X')).to eql('X')
     end
   end
 
   describe 'position_taken?' do
     it 'returns false if the postion on the board has no token' do
       expect(game.position_taken?([' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 1)).to eql(false)
-
     end
   end
 
@@ -53,20 +51,19 @@ describe Game do
 
   describe 'won?' do
     it 'checks the win_combination and return the elements if it is greater or equal to three' do
-      expect(game.won?(['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'], 'XO')).to eql([0, 4, 8])
+      expect(game.won?(%w[X O X O X O X O X], 'XO')).to eql([0, 4, 8])
     end
   end
 
-
   describe 'full?' do
     it 'returns true if board does not include an empty space' do
-      expect(game.full?(['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'])).to eql(true)
+      expect(game.full?(%w[X O X O X O X O X])).to eql(true)
     end
   end
 
   describe 'draw?' do
     it 'returns true if board is full and game not won' do
-      expect(game.draw?(['X', 'O', 'O', 'O', 'X', 'X', 'X', 'O', 'O'], 'XO')).to eql(true)
+      expect(game.draw?(%w[X O O O X X X O O], 'XO')).to eql(true)
     end
 
     it 'returns false if board is not full and game is not won' do
@@ -74,28 +71,27 @@ describe Game do
     end
 
     it 'returns false if the game is won' do
-      expect(game.draw?(['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'], 'XO')).to eql(false)
+      expect(game.draw?(%w[X O X O X O X O X], 'XO')).to eql(false)
     end
   end
 
   describe 'over?' do
     it 'returns true if the game is won' do
-      expect(game.over?(['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'], 'XO')).to eql(true)
+      expect(game.over?(%w[X O X O X O X O X], 'XO')).to eql(true)
     end
 
     it 'returns true if the game is a draw' do
-      expect(game.over?(['X', 'O', 'O', 'O', 'X', 'X', 'X', 'O', 'O'], 'XO')).to eql(true)
+      expect(game.over?(%w[X O O O X X X O O], 'XO')).to eql(true)
     end
 
     it 'returns true if the board is full' do
-      expect(game.draw?(['X', 'O', 'O', 'O', 'X', 'X', 'X', 'O', 'O'], 'XO')).to eql(true)
+      expect(game.draw?(%w[X O O O X X X O O], 'XO')).to eql(true)
     end
   end
 
   describe 'winner?' do
     it 'returns the winning letter if game is won' do
-      expect(game.winner?(['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'], 'X')).to eql('X')
+      expect(game.winner?(%w[X O X O X O X O X], 'X')).to eql('X')
     end
   end
-
 end
