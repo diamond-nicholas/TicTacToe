@@ -45,5 +45,10 @@ describe Game do
     end
   end
 
+  describe 'atual_player' do
+    it 'returns X if the turn_count is odd' do
+      expect(game.atual_player(['X', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '])).to eql('X')
+    end
+  end
 
 end
