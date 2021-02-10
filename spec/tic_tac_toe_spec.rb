@@ -51,4 +51,19 @@ describe Game do
     end
   end
 
+  #skip won? method testing
+
+  def full?(board)
+    if !board.include?(' ')
+      true
+    else
+      false
+    end
+  end
+  describe 'full?' do
+    it 'returns true if board does not include an empty space' do
+      expect(game.full?(['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'])).to eql(true)
+    end
+  end
+
 end
