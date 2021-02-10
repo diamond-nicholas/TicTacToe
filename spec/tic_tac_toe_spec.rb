@@ -33,5 +33,11 @@ describe Game do
     end
   end
 
+  describe 'turn_count' do
+    it 'returns the count of the tokens on the board' do
+      expect(game.turn_count(['X', ' ', 'O', ' ', ' ', ' ', ' ', ' ', ' '])).to eql(2)
+    end
+  end
+
 
 end
