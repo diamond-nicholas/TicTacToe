@@ -1,5 +1,5 @@
 # TicTacToe
-This project involves building a Tic Tac Toe game. The main goal is to put into practice the main concepts of Object Oriented Programming, getting users input and printing the result to the screen, building a game logic and creating the game.
+This project involves building a Tic Tac Toe game. The main goal is to put into practice the main concepts of Object Oriented Programming, getting users input and printing the result to the screen, building a game logic and creating the game. I also tested all methods using rspec and made sure it passes all cases by refactoring.
 
 ## Game Instructions
 * This game uses a board of 9 spaces divided into  3rows and 3colums.
@@ -68,18 +68,13 @@ Step 3: Run the program from command line, then open it in a text editor
 
 - Rubocop linters
 
+- Rspec gem
 
 ## AUTHORS
 👤 **Diamond Nicholas**
 - GitHub:[@Diamond-Nicholas] (https://github.com/diamond-nicholas)
 - Twitter: [@twitterhandle](https://twitter.com/diamondnich)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/diamond-nicholas/)
-
-
-👤 **Mar y Sol Bautista**
-- GitHub: [@marilirulita](https://github.com/marilirulita)
-- Linkedin: [Mar y Sol Bautista](https://www.linkedin.com/in/mar-y-sol-bautista-alvarez-5a6894151/)
-- Twiter: [@marylirulita](https://twitter.com/marylirulita)
 
 
 ## SHOW YOUR SUPPORT
